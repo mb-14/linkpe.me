@@ -31,26 +31,28 @@
         border-color: #000;
       }
       .container {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          align-content: center;
-          justify-content: center;
-          
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
       }
     </style>
   </head>
   <body>
     <div class="container">
+      <h3 id="vpa"></h3>
       <a id="link" class="button">Pay</a>
     </div>
     <script>
-      var vpa = `${window.location.pathname.replace("/", "")}@upi`;
+      var vpa = window.location.pathname.replace("/", "");
       const upiLink = `upi://pay?pa=${vpa}&pn=payee"`;
       var linkEl = document.getElementById("link");
+      var vpaEl = document.getElementById("vpa");
       linkEl.href = upiLink;
-      linkEl.innerText = `Pay ${vpa}`;
+      linkEl.innerText = `Pay`;
+      vpaEl.innerText = vpa;
     </script>
   </body>
 </html>
