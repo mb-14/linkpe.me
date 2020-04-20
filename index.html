@@ -8,9 +8,8 @@
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         flex-direction: column;
-        align-items: center;
       }
 
       .container img {
@@ -19,30 +18,48 @@
         margin-left: auto;
         margin-right: auto;
       }
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer a {
+        font-size: 0.9rem;
+      }
       code {
         font-size: 1.3rem;
         color: rgb(199, 37, 78);
         background-color: rgb(249, 242, 244);
       }
-      a {
+      .main a {
         font-size: 1.2rem;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <img src="logo.png" />
-      <p>Create a quick pay page for your UPI handle</p>
-      <h3>Instructions</h3>
-      <span>
-        To access the page for your VPA - <b>username@upi</b>, open the
-        following URL:</span
-      >
-      <code>https://upime.at/username@upi</code>
-      <h3>Example</h3>
-      <a href="https://upime.at/pmnrf@centralbank"
-        >https://upime.at/pmnrf@centralbank</a
-      >
+      <div class="main">
+        <img src="logo.png" />
+        <p>Create a quick pay page for your UPI handle</p>
+        <h3>Instructions</h3>
+        <span>
+          To access the page for your VPA - <b>username@upi</b>, open the
+          following URL:</span
+        >
+        <code>https://upime.at/username@upi</code>
+        <h3>Example</h3>
+        <a href="https://upime.at/pmnrf@centralbank"
+          >https://upime.at/pmnrf@centralbank</a
+        >
+      </div>
+      <div class="footer">
+        <p><a href="mailto:mbakshi1094@gmail.com">support</a> | <a href="https://github.com/mb-14/upme.at">source code</a> </p>
+      </div>
     </div>
   </body>
 </html>

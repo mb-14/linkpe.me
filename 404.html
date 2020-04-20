@@ -6,6 +6,8 @@
       .button {
         font-family: "Courier New", Courier, monospace;
         font-size: 1.3em;
+        font-weight: 500;
+        margin-top: 1em;
         padding: 0.5em 3em;
         color: #fff; /* rgba supported */
         border: 1px solid #999; /*IE 6/7/8*/
@@ -37,20 +39,43 @@
         display: flex;
         align-items: center;
         align-content: center;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-direction: column;
       }
-      .container img{
+      .container img {
         width: 4.5em;
         height: 4.5em;
+        margin-bottom: 1em;
+
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer a {
+        font-size: 0.9rem;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <img src="logo.png"/>
-      <h3 id="vpa"></h3>
-      <a id="link" class="button">Pay</a>
+      <div class="main">
+        <img src="logo.png" />
+        <h3 id="vpa"></h3>
+        <a id="link" class="button">Pay</a>
+      </div>
+      <div class="footer">
+        <p>
+          <a href="mailto:mbakshi1094@gmail.com">support</a> |
+          <a href="https://github.com/mb-14/upme.at">source code</a>
+        </p>
+      </div>
     </div>
     <script>
       var vpa = window.location.pathname.replace("/", "");
