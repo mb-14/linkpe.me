@@ -7,8 +7,6 @@
         width: 100%;
         height: 100%;
         display: flex;
-        align-items: center;
-        align-content: center;
         justify-content: center;
         flex-direction: column;
       }
@@ -16,23 +14,27 @@
       .container img {
         width: 6em;
         height: 6em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .text-center {
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <img src="logo.png" />
-      <p>Create a quick pay page for your UPI handle</p>
-      <b>Instructions:</b>
-      <p>To access the page for your VPA: <b>username@upi</b></p>
-      <p>Open <code>https://upime.at/username@upi</code></p>
-      <p></p>
-      <p>
-        Example:
-        <a href="https://upime.at/pmnrf@centralbank"
-          >https://upime.at/pmnrf@centralbank</a
-        >
-      </p>
+      <p class="text-center">Create a quick pay page for your UPI handle</p>
+      <h3>Instructions:</h3>
+      <span>
+        To access the page for your VPA - <b>username@upi</b>, open the
+        following URL: <code>https://upime.at/username@upi</code>
+      </span>
+      <h3>Example</h3>
+      <a href="https://upime.at/pmnrf@centralbank"
+        >https://upime.at/pmnrf@centralbank</a
+      >
     </div>
   </body>
 </html>
