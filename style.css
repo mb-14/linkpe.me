@@ -1,0 +1,64 @@
+body {
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+.button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-top: 1.4em;
+  padding: 0.5em 3em;
+  color: #fff; /* rgba supported */
+  border: 1px solid #999; /*IE 6/7/8*/
+  border: none rgba(0, 0, 0, 0); /*IE9 + everything else*/
+  background: rgb(28, 184, 65); /* this is a light blue */
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.button:hover,
+.button:focus {
+  background-image: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.05) 40%,
+    rgba(0, 0, 0, 0.1)
+  );
+}
+.button:focus {
+  outline: 0;
+}
+.button:active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset,
+    0 0 6px rgba(0, 0, 0, 0.2) inset;
+  border-color: #000;
+}
+
+.button[disabled],
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:focus,
+.button-disabled:active {
+  border: none;
+  background-image: none;
+  /* csslint ignore:start */
+  filter: alpha(opacity=40);
+  /* csslint ignore:end */
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+}
+.footer a {
+  font-size: 0.9rem;
+}

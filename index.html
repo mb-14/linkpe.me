@@ -2,15 +2,9 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="logo.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Linkpe</title>
     <style>
-      .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-
       .container img {
         width: 6em;
         height: 6em;
@@ -21,24 +15,20 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         margin: auto;
       }
-      .footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: auto;
-      }
-      .footer a {
-        font-size: 0.9rem;
-      }
-      code {
-        font-size: 1.3rem;
-        color: rgb(199, 37, 78);
-        background-color: rgb(249, 242, 244);
-      }
+
       .main a {
         font-size: 1.2rem;
+      }
+      .label {
+        font-weight: bold;
+      }
+      #vpa {
+        font-size: 1.2em;
+        width: 100%;
+        padding: 0.5em;
       }
     </style>
   </head>
@@ -47,20 +37,35 @@
       <div class="main">
         <img src="logo.png" />
         <p>Create a quick payment page for your UPI handle</p>
-        <h3>Instructions</h3>
-        <span>
-          To access the page for your VPA - <b>username@upi</b>, open the
-          following URL:</span
-        >
-        <code>https://linkpe.me/username@upi</code>
-        <h3>Example</h3>
-        <a href="https://linkpe.me/pmnrf@centralbank"
-          >https://linkpe.me/pmnrf@centralbank</a
-        >
+        <p class="label">Enter Virtual Payment Address</p>
+        <input type="text" id="vpa" placeholder="abc@upi" />
+        <button id="create" class="button" href="https://linkpe.me/" disabled>
+          Create
+        </button>
       </div>
       <div class="footer">
-        <p><a href="mailto:mbakshi1094@gmail.com">support</a> | <a href="https://github.com/mb-14/linkpe.me">source code</a> </p>
+        <p>
+          <a href="mailto:mbakshi1094@gmail.com">support</a> |
+          <a href="https://github.com/mb-14/linkpe.me">source code</a>
+        </p>
       </div>
     </div>
+    <script>
+      var vpaInput = document.getElementById("vpa");
+      var createEl = document.getElementById("create");
+      const vpaRegex = /^.+@.+/;
+      vpaInput.addEventListener("input", function (event) {
+        var vpa = vpaInput.value;
+        if (vpaRegex.test(vpa)) {
+          console.log("hear");
+          createEl.disabled = false;
+        } else {
+          createEl.disabled = true;
+        }
+      });
+      createEl.addEventListener("click", function (event) {
+        window.location.href += vpaInput.value;
+      });
+    </script>
   </body>
 </html>
