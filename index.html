@@ -63,7 +63,7 @@
         }
       });
       createEl.addEventListener("click", function (event) {
-        window.location.href += vpaInput.value;
+        window.location.href = `${window.location.host}/${vpaInput.value}`;
       });
     </script>
   </body>
