@@ -43,12 +43,18 @@
     </div>
     <script>
       var vpa = window.location.pathname.replace("/", "");
-      const upiLink = `upi://pay?pa=${vpa}&pn=payee"`;
-      var linkEl = document.getElementById("link");
-      var vpaEl = document.getElementById("vpa");
-      linkEl.href = upiLink;
-      linkEl.innerText = `Pay`;
-      vpaEl.innerText = vpa;
+      var isValidVpa = vpa.match(/^\w+@[a-zA-Z_]+?$/gm);
+
+      if(!isValidVpa) {
+        window.location.pathname = "/"
+      } else {
+        const upiLink = `upi://pay?pa=${vpa}&pn=payee"`;
+        var linkEl = document.getElementById("link");
+        var vpaEl = document.getElementById("vpa");
+        linkEl.href = upiLink;
+        linkEl.innerText = `Pay`;
+        vpaEl.innerText = vpa;
+      }
     </script>
   </body>
 </html>
